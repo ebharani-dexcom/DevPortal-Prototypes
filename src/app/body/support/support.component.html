@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      Support
+      <ul>
+          <li><a href="#">Support Requests</a></li>
+          <li>Terms and Conditions</li>
+          <li>Further Information</li>
+          <li>Compliance</li>
+          <li>Status Page</li>
+        </ul>
+    </div>
+    <div class="col-8">
+      <b>Support Requests</b>
+      <p>Let us know how we can best improve your experience developing with the Dexcom API.
+        This form should not be used for product or technical issues related to Dexcom devices. For product or technical issues related to Dexcom devices, please call 1-844-607-8398; you may also email techsupport@dexcom.com, but your email will not be secure and could be intercepted in transit to Dexcom.</p>
+      <div>
+          <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+              <div class="form-group">
+                <label for="name">Choose a category</label>
+                <select class="custom-select"  [(ngModel)]="request.category" name="category" >
+                    <option selected>(Select One)</option>
+                    <option value="1">Account Management</option>
+                    <option value="2">App Management</option>
+                    <option value="3">API Endpoints</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                  <label for="alterEgo">Subject</label>
+                  <input type="text" class="form-control" [(ngModel)]="request.subject" name="subject">
+                </div>
+         
+              <div class="form-group">
+                <label for="alterEgo">Description</label>
+                <textarea type="text" rows="5" cols="8" class="form-control" [(ngModel)]="request.description" name="description"></textarea>
+              </div>
+         
+              <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+            <p>{{message}}</p>
+      </div>
+      </div>
+  </div>
+</div>
